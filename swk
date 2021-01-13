@@ -93,51 +93,7 @@ def loginSC():
 		time.sleep(1)
                 LoginSC()
 
-def tokenz():
-	os.system('clear')
-	print logo
-	toket = raw_input("\033[1;97m [\033[1;91m•\033[1;97m•\033[1;97m]\033[1;97m \033[1;97mToken Facebook? : \033[1;93m")
-	try:
-		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
-		a = json.loads(otw.text)
-		nama = a['name']
-		zedd = open("login.txt", 'w')
-		zedd.write(toket)
-		zedd.close()
-		jalan ('\033[1;97m Jangan Lupa Follow Akun Pribadi Saya :)')
-		jalan ('\033[1;97m[\033[1;91m•\033[1;97m•\033[1;97m]\033[1;92m Sedang Login....Login Berhasil')
-		os.system('xdg-open https://m.facebook.com/swk.karawang')
-		bot_komen()
-	except KeyError:
-		print "\033[1;97m[\033[1;93m!\033[1;97m] \033[1;93mToken Salah !"
-		time.sleep(1.0)
-		masuk()
-			
-			
-def menu():
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		os.system('clear')
-		print"\033[1;96m[!] \x1b[1;91mToken invalid"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		keluar()
-	try:
-		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
-		a = json.loads(otw.text)
-		nama = a['name']
-		id = a['id']
-	except KeyError:
-		os.system('clear')
-		print"\033[1;96m[!] \033[1;91mToken invalid"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		login()
-	except requests.exceptions.ConnectionError:
-		print"\033[1;96m[!] \x1b[1;91mTidak ada koneksi"
-		keluar()
+
 	os.system("clear")
 	print logo
 	print 42*"\033[1;96m="
