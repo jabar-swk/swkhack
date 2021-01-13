@@ -79,7 +79,7 @@ def siapa():
 		loginSC()
 		
 		
-token def ():
+def Token ():
     os . sistem ( 'jelas' )
     cetak  logo
     toke  =  raw_input ( ' \ 033 [37; 1m [ \ 033 [32; 1m * \ 033 [37; 1m] \ 033 [34; token 1minput \ 033 [33; 1m: \ 033 [37; 1m' )
